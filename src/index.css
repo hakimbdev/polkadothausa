@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved typography scale */
+h1 {
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+h2 {
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h3 {
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+h4, h5, h6 {
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Responsive font sizes */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #E6007A, #552BBF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #c8005e, #4a2599);
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #E6007A;
+  outline-offset: 2px;
+}
+
+/* Custom gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #E6007A, #552BBF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom backdrop blur utility */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Loading spinner */
+.loading-spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #E6007A;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Improved card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Cultural pattern overlay */
+.hausa-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E6007A' fill-opacity='0.05'%3E%3Cpath d='M30 30l15-15v30l-15-15zM15 15l15 15-15 15V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Better text readability */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Improved button and interactive element sizing */
+button, .btn {
+  min-height: 44px; /* Minimum touch target size */
+  padding: 0.75rem 1.5rem;
+}
+
+@media (max-width: 640px) {
+  button, .btn {
+    min-height: 48px;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-r {
+    background: #E6007A !important;
+  }
+  
+  .text-gray-600 {
+    color: #000000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Better spacing for mobile */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
